@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto — Sporting Mostaza</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-section {
+    background: linear-gradient(135deg, rgba(217, 161, 34, 0.05) 0%, rgba(59, 43, 27, 0.05) 100%);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .contact-info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+  }
+  
+  .contact-info-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--brand);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: var(--space-md);
+    flex-shrink: 0;
+  }
+  
+  .contact-info-text h5 {
+    margin-bottom: var(--space-xs);
+    color: var(--brand-dark);
+  }
+  
+  .form-control:focus {
+    border-color: var(--brand);
+    box-shadow: 0 0 0 0.2rem rgba(217, 161, 34, 0.25);
+  }
+  
+  .btn-submit {
+    background: var(--brand-dark);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    font-weight: 600;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    width: 100%;
+  }
+  
+  .btn-submit:hover {
+    background: var(--brand);
+    color: var(--brand-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 161, 34, 0.3);
+  }
+  
+  textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV (Contacto activo) -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+      <img src="ASSETS DESCOMPRIMIR/ChatGPT_Image_21_ago_2025__17_41_34-removebg-preview.png" alt="Sporting Mostaza" width="50" height="50" class="me-2">
+      Sporting Mostaza
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"><span class="navbar-toggler-icon" style="filter: invert(1);"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="historia.html">Historia</a></li>
+        <li class="nav-item"><a class="nav-link" href="plantel.html">Plantel</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="container my-5">
+  <h1 class="text-center">Contacto</h1>
+  <p class="lead text-center max-700 mx-auto">¿Tienes preguntas o sugerencias? No dudes en ponerte en contacto con nosotros. Nos encantaría saber de ti.</p>
+</header>
+
+<main class="container pb-5">
+  <div class="row g-4">
+    <!-- INFORMACIÓN DE CONTACTO -->
+    <div class="col-md-4">
+      <div class="contact-section">
+        <h3 class="mb-4">Información de Contacto</h3>
+        
+        <div class="contact-info">
+          <div class="contact-info-icon">📍</div>
+          <div class="contact-info-text">
+            <h5>Ubicación</h5>
+            <p class="mb-0">Av. TEKKEN7, Ciudad<br>País</p>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-info-icon">📱</div>
+          <div class="contact-info-text">
+            <h5>Teléfono</h5>
+            <p class="mb-0">+1 (555) 123-4567</p>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-info-icon">✉️</div>
+          <div class="contact-info-text">
+            <h5>Email</h5>
+            <p class="mb-0">info@sportingmostaza.com</p>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-info-icon">🕐</div>
+          <div class="contact-info-text">
+            <h5>Horarios</h5>
+            <p class="mb-0">Lunes - Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 14:00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REDES SOCIALES -->
+      <div class="contact-section">
+        <h5 class="mb-3">Síguenos</h5>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-sm" style="background: var(--brand); color: white;"><strong>f</strong></a>
+          <a href="#" class="btn btn-sm" style="background: var(--brand); color: white;"><strong>📸</strong></a>
+          <a href="#" class="btn btn-sm" style="background: var(--brand); color: white;"><strong>𝕏</strong></a>
+          <a href="#" class="btn btn-sm" style="background: var(--brand); color: white;"><strong>▶</strong></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <div class="col-md-8">
+      <div class="contact-section">
+        <h3 class="mb-4">Envíanos un Mensaje</h3>
+        <form id="contactForm">
+          <div class="mb-3">
+            <label for="nombre" class="form-label fw-500">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label fw-500">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="telefono" class="form-label fw-500">Teléfono</label>
+              <input type="tel" class="form-control" id="telefono" name="telefono">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="asunto" class="form-label fw-500">Asunto</label>
+            <input type="text" class="form-control" id="asunto" name="asunto" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="mensaje" class="form-label fw-500">Mensaje</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" required></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="asunto" class="form-label fw-500">Asunto del Mensaje</label>
+            <select class="form-select" required>
+              <option selected disabled>Selecciona una opción...</option>
+              <option value="general">Consulta General</option>
+              <option value="afiliacion">Afiliación de Jugadores</option>
+              <option value="patrocinio">Patrocinio/Publicidad</option>
+              <option value="eventos">Eventos y Reservas</option>
+              <option value="reclamo">Reclamo o Sugerencia</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" id="terminos" required>
+            <label class="form-check-label" for="terminos">
+              Acepto los términos y condiciones y la política de privacidad
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit">Enviar Mensaje</button>
+          <small class="d-block mt-3 text-muted">Nos pondremos en contacto en las próximas 24 horas.</small>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer text-center p-5">
+  <div class="container">
+    <p class="mb-2"><strong>Sporting Mostaza</strong> — Excelencia en el deporte</p>
+    <small>© 2025 Todos los derechos reservados</small>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('¡Gracias por tu mensaje! Nos pondremos en contacto pronto.');
+    this.reset();
+  });
+</script>
+</body>
+</html>
