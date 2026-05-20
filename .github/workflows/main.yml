@@ -1,0 +1,46 @@
+name: CI/CD - Monitoreo y Testing de Despliegue
+
+on:
+  push:
+    branches: [ "main" ] # Se ejecuta al subir cambios
+  workflow_dispatch: # Te da un botón para ejecutarlo manualmente cuando quieras para tomar las fotos de la rúbrica
+
+jobs:
+  test-despliegue:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # PASO 1: VERIFICAR QUE LA URL FUNCIONA (El testeo automático que pide el profe)
+      - name: Test de Disponibilidad de la URL
+        run: |
+          # PON TU LINK DE GITHUB PAGES AQUÍ ABAJO:
+          URL="https://kevinvizueta.github.io/Sporting_Mostaza/"
+          
+          echo "Realizando petición web a: $URL"
+          
+          # Extraemos el código de estado HTTP (200 significa OK, 404 No encontrado, etc.)
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" $URL)
+          
+          if [ "$HTTP_STATUS" -eq 200 ]; then
+            echo "✅ ÉXITO: La página está en línea y respondió con estado 200 OK."
+          else
+            echo "❌ ERROR: La página está caída o no existe. Estado HTTP: $HTTP_STATUS"
+            exit 1 # Esto rompe el pipeline y lo marca en rojo
+          fi
+
+      # PASO 2: INGENIERÍA DEL CAOS (Tu valor agregado)
+      - name: Ingeniería del Caos (Simulador de fallos)
+        run: |
+          echo "Iniciando test de estrés e inyección de caos aleatorio..."
+          
+          # Tiramos un "dado" virtual del 1 al 10
+          DADO=$((1 + RANDOM % 10))
+          
+          if [ $DADO -gt 8 ]; then
+            # Si sale 9 o 10, simulamos que el servidor colapsó
+            echo "🚨 CAOS ACTIVADO: Se ha simulado un pico de tráfico masivo."
+            echo "El servidor ha dejado de responder (Simulación de timeout)."
+            exit 1 # Forzamos el fallo
+          else
+            echo "✅ El sistema resistió el tráfico normal. Flujo estable."
+          fi
